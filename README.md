@@ -7,6 +7,82 @@
 
 # Q&A
 
+### Q: On what chains are the smart contracts going to be deployed?
+Solana Mainnet
+___
+
+### Q: If you are integrating tokens, are you allowing only whitelisted tokens to work with the codebase or any complying with the standard? Are they assumed to have certain properties, e.g. be non-reentrant? Are there any types of [weird tokens](https://github.com/d-xo/weird-erc20) you want to integrate?
+We manually add the supported token pairs into the swap. The initial list is:  SOL, USDT, USDC. Any two of them can form a swap pair.
+___
+
+### Q: Are there any limitations on values set by admins (or other roles) in the codebase, including restrictions on array lengths?
+Functions need admin authority:
+claim_fee
+claim_rebate_fee
+create_oracle
+create_pool
+create_rebate_pool
+deposit
+set_pool_admin
+set_pool_state (all handlers in this file)
+set_woo_admin
+set_woo_state(all handlers in this file)
+___
+
+### Q: Are there any limitations on values set by admins (or other roles) in protocols you integrate with, including restrictions on array lengths?
+No.
+___
+
+### Q: For permissioned functions, please list all checks and requirements that will be made before calling the function.
+No.
+___
+
+### Q: Is the codebase expected to comply with any EIPs? Can there be/are there any deviations from the specification?
+No.
+___
+
+### Q: Are there any off-chain mechanisms or off-chain procedures for the protocol (keeper bots, arbitrage bots, etc.)?
+We have an offchain script, posting the prices of supported tokens (sol, usdt, etc) to Wooracle contract on Solana.
+___
+
+### Q: Are there any hardcoded values that you intend to change before (some) deployments?
+NO.
+___
+
+### Q: If the codebase is to be deployed on an L2, what should be the behavior of the protocol in case of sequencer issues (if applicable)? Should Sherlock assume that the Sequencer won't misbehave, including going offline?
+No. Will deploy on Solana.
+___
+
+### Q: Should potential issues, like broken assumptions about function behavior, be reported if they could pose risks in future integrations, even if they might not be an issue in the context of the scope? If yes, can you elaborate on properties/invariants that should hold?
+NO.
+___
+
+### Q: Please discuss any design choices you made.
+N/A
+___
+
+### Q: Please list any known issues and explicitly state the acceptable risks for each known issue.
+N/A
+___
+
+### Q: We will report issues where the core protocol functionality is inaccessible for at least 7 days. Would you like to override this value?
+No.
+___
+
+### Q: Please provide links to previous audits (if any).
+N/A
+___
+
+### Q: Please list any relevant protocol resources.
+Our swap's market-making formula: https://drive.google.com/file/d/16srlNV45gnZ2zZRKQsjHG-sEMXN_ZqRc/view?usp=sharing
+___
+
+### Q: Additional audit information.
+no.
+___
+
+
+
 # Audit scope
 
 
