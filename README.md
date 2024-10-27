@@ -11,10 +11,6 @@
 Solana Mainnet
 ___
 
-### Q: If you are integrating tokens, are you allowing only whitelisted tokens to work with the codebase or any complying with the standard? Are they assumed to have certain properties, e.g. be non-reentrant? Are there any types of [weird tokens](https://github.com/d-xo/weird-erc20) you want to integrate?
-We manually add the supported token pairs into the swap. The initial list is:  SOL, USDT, USDC. Any two of them can form a swap pair.
-___
-
 ### Q: Are there any limitations on values set by admins (or other roles) in the codebase, including restrictions on array lengths?
 Functions need admin authority:
 claim_fee
